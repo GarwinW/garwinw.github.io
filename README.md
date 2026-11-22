@@ -14,29 +14,6 @@ portfolio/
 └── README.md
 ```
 
-## Starten
-
-1. Ordner entpacken.
-2. `index.html` per Doppelklick im Browser öffnen.
-
-GSAP, ScrollTrigger und die Schriften (Syne, Manrope) werden per CDN geladen,
-dafür ist eine Internetverbindung nötig.
-
-Komfortabler mit automatischem Neuladen: in VS Code die Erweiterung
-"Live Server" installieren, Rechtsklick auf `index.html` und "Open with Live Server".
-
-## Platzhalter ersetzen
-
-- `index.html`: "Dein Name", `hallo@example.de`, Texte in Hero und "Über mich"
-- Die Projektkacheln stehen nicht mehr in `index.html`, sondern werden von
-  `main.js` aus `PROJECTS` gerendert. Jedes Projekt mit `featured: true`
-  erscheint als Kachel; ohne dieses Flag bleibt es nur über den Direktlink
-  erreichbar.
-- Lebenslauf-Button: `href="#"` durch den Pfad zur PDF ersetzen
-- `style.css`: Farben stehen ganz oben in `:root`
-- Vorschaubilder: liegen unter `assets/projects/<id>/` und werden in `main.js`
-  im `PROJECTS`-Array eingetragen (siehe unten)
-
 ## Projekt-Detailansicht
 
 Ein Klick auf eine Kachel lässt das Overlay aus der Kachel herauswachsen und
