@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Garwin – Portfolio</title>
+  <meta name="description" content="Portfolio von Garwin: Medieninformatik-Student an der THM mit Projekten in Web- und Appentwicklung. Aktuell auf der Suche nach einem Praktikum.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Hintergrund: weiche Verlaufs-Blobs, die GSAP langsam bewegt -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__inner">
+      <span class="blob blob--violet"></span>
+      <span class="blob blob--magenta"></span>
+      <span class="blob blob--deep"></span>
+    </div>
+  </div>
+
+  <!-- Custom Cursor (nur Geräte mit Maus) -->
+  <div class="cursor" aria-hidden="true"></div>
+
+  <!-- Navigation: Pill am Desktop, Burger + Overlay am Handy -->
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <span class="nav__indicator" aria-hidden="true"></span>
+      <a class="nav__link is-active" href="#start" data-target="start"><span class="roll"><span>Start</span><span
+            aria-hidden="true">Start</span></span></a>
+      <a class="nav__link" href="#projekte" data-target="projekte"><span class="roll"><span>Projekte</span><span
+            aria-hidden="true">Projekte</span></span></a>
+      <a class="nav__link" href="#ueber-mich" data-target="ueber-mich"><span class="roll"><span>Über mich</span><span
+            aria-hidden="true">Über mich</span></span></a>
+      <a class="nav__link" href="#kontakt" data-target="kontakt"><span class="roll"><span>Kontakt</span><span
+            aria-hidden="true">Kontakt</span></span></a>
+    </nav>
+
+    <button class="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <ul class="menu__list">
+      <li><a class="menu__link" href="#start" data-target="start"><span>Start</span></a></li>
+      <li><a class="menu__link" href="#projekte" data-target="projekte"><span>Projekte</span></a></li>
+      <li><a class="menu__link" href="#ueber-mich" data-target="ueber-mich"><span>Über mich</span></a></li>
+      <li><a class="menu__link" href="#kontakt" data-target="kontakt"><span>Kontakt</span></a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="start">
+      <div class="wrap">
+        <p class="eyebrow">Webentwicklung · Backend</p>
+        <h1 class="hero__title">
+          <span class="line"><span>Hi, ich bin</span></span>
+          <span class="line"><span class="gradient-text">Garwin.</span></span>
+        </h1>
+        <p class="hero__lead">
+          Ich studiere Medieninformatik und programmiere am liebsten Webanwendungen.
+          Aktuell suche ich ein Praktikum in der Web- und Appentwicklung. 
+          Im Anschluss ans Praktikum wäre für mich auch eine Werkstudentenstelle interessant.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary magnetic" href="#projekte" data-target="projekte">Projekte ansehen</a>
+          <a class="btn btn--ghost magnetic" href="#kontakt" data-target="kontakt">Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKTE -->
+    <section class="section" id="projekte">
+      <div class="wrap">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">Ausgewählte Arbeiten</p>
+          <h2>Projekte</h2>
+        </header>
+
+        <!-- Die Kacheln werden von main.js aus dem PROJECTS-Array gerendert. -->
+        <div class="cards"></div>
+      </div>
+    </section>
+
+    <!-- ÜBER MICH -->
+    <section class="section" id="ueber-mich">
+      <div class="wrap about">
+        <div data-reveal>
+          <p class="eyebrow">Über mich</p>
+          <h2>Programmieren ist mein Ding.</h2>
+          <p class="about__text">
+            Ich studiere Medieninformatik an der THM in Friedberg und baue am liebsten
+            Webanwendungen. Ob Uniprojekt oder Freizeit: Ich entwickle gern von der Idee
+            bis zur fertigen Anwendung, vom Lern-Tool mit KI-Anbindung bis zur
+            Companion-App für ein Brettspiel. Mir ist wichtig, dass ich den Code, den ich
+            schreibe, auch wirklich verstehe.
+          </p>
+        </div>
+        <ul class="chips" aria-label="Skills">
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>PHP</li>
+          <li>React</li>
+          <li>MySQL</li>
+          <li>Git</li>
+          <li>Java</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="section section--contact" id="kontakt">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Kontakt</p>
+        <h2 class="contact__title" data-reveal><span class="gradient-text">Lass uns reden.</span></h2>
+        <p class="hero__lead" data-reveal>
+          Du hast ein Praktikum zu vergeben oder Fragen zu meinen Projekten?
+          Schreib mir einfach.
+        </p>
+        <p class="contact__mail" data-reveal>garwin@familie-waldmann.de</p>
+        <div class="hero__cta" data-reveal>
+          <a class="btn btn--primary magnetic" href="mailto:garwin@familie-waldmann.de">E-Mail schreiben</a>
+          <!-- <a class="btn btn--ghost magnetic" href="#">Lebenslauf (PDF)</a> -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <!-- <p>© 2026 Garwin</p> -->
+    </div>
+  </footer>
+
+  <!-- Projekt-Detailansicht: die Inhalte werden von main.js aus PROJECTS befüllt -->
+  <div class="project-layer" hidden>
+    <div class="project-layer__backdrop" data-close aria-hidden="true"></div>
+
+    <div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-title" tabindex="-1">
+      <button class="project-modal__close" type="button" data-close aria-label="Detailansicht schließen">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <div class="project-modal__scroll">
+        <div class="project-modal__hero">
+          <div class="project-modal__hero-media"></div>
+          <div class="project-modal__hero-shade" aria-hidden="true"></div>
+          <div class="project-modal__hero-text">
+            <p class="project-modal__tags"></p>
+            <h2 class="project-modal__title" id="project-title"></h2>
+          </div>
+        </div>
+
+        <div class="project-modal__body">
+          <div class="project-modal__main">
+            <div class="project-modal__text"></div>
+          </div>
+
+          <aside class="project-modal__side">
+            <dl class="project-modal__meta"></dl>
+            <div class="project-modal__links"></div>
+          </aside>
+        </div>
+
+        <div class="project-modal__gallery-wrap">
+          <h3 class="project-modal__subhead">Einblicke</h3>
+          <div class="project-modal__gallery"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lightbox" hidden>
+      <div class="lightbox__backdrop" data-lightbox-close aria-hidden="true"></div>
+      <figure class="lightbox__figure" role="dialog" aria-modal="true" aria-label="Bildansicht" tabindex="-1">
+        <button class="lightbox__close" type="button" data-lightbox-close aria-label="Bild schließen">×</button>
+        <img class="lightbox__img" alt="">
+        <figcaption class="lightbox__caption"></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
